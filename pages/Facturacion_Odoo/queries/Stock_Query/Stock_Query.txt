@@ -1,0 +1,59 @@
+SELECT 
+  -- 1. TOTAL FACTURACIÓN (De lo filtrado)
+  SUM(total) as total_ventas,
+
+  -- 2. TOTAL BULTOS Y UNIDADES (General)
+  SUM(cantidad) as total_bultos,
+  SUM(cantidad * COALESCE(SUBSTRING(producto FROM '[xX]\s*([0-9]+)')::INTEGER, 1)) as total_unidades,
+
+  -- 3. CÁLCULO DE KILOS DE MUZZARELLA
+  SUM(
+    CASE 
+      -- Si dice 330 gr y x 25 u. -> (Cantidad * 25 * 0.330 kg)
+      WHEN producto ILIKE '%330%' AND (producto ILIKE '%x 25%' OR producto ILIKE '%x25%') 
+      THEN cantidad * 25 * 0.330
+      
+      -- Si dice 110 gr y x 25 u. -> (Cantidad * 25 * 0.110 kg)
+      WHEN producto ILIKE '%110%' AND (producto ILIKE '%x 25%' OR producto ILIKE '%x25%') 
+      THEN cantidad * 25 * 0.110
+      
+      -- Si dice 500 gr (se asume individual) -> (Cantidad * 0.500 kg)
+      WHEN producto ILIKE '%Muzzarella%' AND producto ILIKE '%500%' 
+      THEN cantidad * 0.500
+      
+      ELSE 0 
+    END
+  ) as kilos_muzzarella,
+
+  -- 4. CÁLCULO DE KILOS DE PROVOLONE
+  SUM(
+    CASE 
+      -- Si dice 100 gr y x 25 u.
+      WHEN producto ILIKE '%100%' AND (producto ILIKE '%x 25%' OR producto ILIKE '%x25%') 
+      THEN cantidad * 25 * 0.100
+      
+      -- Si dice 25 gr y x 25 u.
+      WHEN producto ILIKE '%25%' AND producto NOT ILIKE '%x 25%' AND (producto ILIKE '%x 25%' OR producto ILIKE '%x25%') 
+      THEN cantidad * 25 * 0.025
+      
+      -- Si dice 500 gr
+      WHEN producto ILIKE '%Provolone%' AND producto ILIKE '%500%' 
+      THEN cantidad * 0.500
+      
+      ELSE 0 
+    END
+  ) as kilos_provolone
+
+FROM public.ordenes_compras_odoo
+
+WHERE
+  -- 1. FECHAS (Stock)
+  ( {{ !FechaDesdeStock.formattedDate }} OR fecha >= TO_DATE({{ FechaDesdeStock.formattedDate }}, 'DD-MM-YYYY') )
+  AND
+  ( {{ !FechaHastaStock.formattedDate }} OR fecha <= TO_DATE({{ FechaHastaStock.formattedDate }}, 'DD-MM-YYYY') )
+  AND
+  -- 2. CLIENTE (Stock)
+  ( {{ SelectClienteStock.selectedOptionValues.length === 0 }} OR cliente = ANY ({{ SelectClienteStock.selectedOptionValues }}) )
+  AND
+  -- 3. PRODUCTO (Stock) -> ¡ESTE ES EL NUEVO!
+  ( {{ SelectProductoStock.selectedOptionValues.length === 0 }} OR producto = ANY ({{ SelectProductoStock.selectedOptionValues }}) )

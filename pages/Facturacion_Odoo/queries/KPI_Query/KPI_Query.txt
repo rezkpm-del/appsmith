@@ -1,0 +1,29 @@
+SELECT 
+  -- 1. TOTAL DINERO
+  SUM(total) as total_ventas,
+
+  -- 2. TOTAL BULTOS (Cajas cerradas)
+  SUM(cantidad) as total_bultos,
+
+  -- 3. TOTAL UNIDADES REALES (Detecta "x 12", "x 6", etc. y multiplica)
+  SUM(
+    cantidad * COALESCE(SUBSTRING(producto FROM '[xX]\s*([0-9]+)')::INTEGER, 1)
+  ) as total_unidades
+
+FROM public.ordenes_compras_odoo
+
+WHERE
+  -- A. FILTRO FECHA DESDE
+  ( {{ !FechaDesde.formattedDate }} OR fecha >= TO_DATE({{ FechaDesde.formattedDate }}, 'DD-MM-YYYY') )
+  AND
+  
+  -- B. FILTRO FECHA HASTA
+  ( {{ !FechaHasta.formattedDate }} OR fecha <= TO_DATE({{ FechaHasta.formattedDate }}, 'DD-MM-YYYY') )
+  AND
+  
+  -- C. FILTRO CLIENTE (MULTIPLE)
+  ( {{ SelectCliente.selectedOptionValues.length === 0 }} OR cliente = ANY ({{ SelectCliente.selectedOptionValues }}) )
+  AND
+  
+  -- D. FILTRO PRODUCTO (MULTIPLE)
+  ( {{ SelectProducto.selectedOptionValues.length === 0 }} OR producto = ANY ({{ SelectProducto.selectedOptionValues }}) )

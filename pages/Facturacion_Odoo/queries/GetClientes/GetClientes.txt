@@ -1,0 +1,1 @@
+SELECT DISTINCT cliente FROM public.ordenes_compras_odoo;

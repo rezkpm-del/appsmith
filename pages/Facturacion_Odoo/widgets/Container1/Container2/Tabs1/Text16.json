@@ -1,0 +1,41 @@
+{
+  "borderRadius": "0px",
+  "bottomRow": 4,
+  "boxShadow": "none",
+  "dynamicBindingPathList": [
+    {
+      "key": "fontFamily"
+    }
+  ],
+  "dynamicHeight": "FIXED",
+  "dynamicPropertyPathList": [
+    {
+      "key": "fontSize"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "fontFamily": "{{appsmith.theme.fontFamily.appFont}}",
+  "fontSize": "1.5rem",
+  "fontStyle": "BOLD",
+  "isLoading": false,
+  "isVisible": "true",
+  "labelTextSize": "0.875rem",
+  "leftColumn": 23,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "originalBottomRow": 146,
+  "originalTopRow": 141,
+  "overflow": "NONE",
+  "parentColumnSpace": 11.78515625,
+  "parentId": "mbsh0coefc",
+  "parentRowSpace": 10,
+  "rightColumn": 40,
+  "text": "Tabla Ventas",
+  "textAlign": "LEFT",
+  "textColor": "#231F20",
+  "topRow": 0,
+  "type": "TEXT_WIDGET",
+  "version": 1,
+  "widgetId": "urzv99hdc8",
+  "widgetName": "Text16"
+}

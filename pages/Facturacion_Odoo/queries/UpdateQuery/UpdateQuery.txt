@@ -1,0 +1,8 @@
+UPDATE public."ordenes_compras_odoo" SET
+		"cliente" = '{{update_form.fieldState.cliente.isVisible ? update_form.formData.cliente : update_form.sourceData.cliente}}',
+		"fecha" = '{{update_form.fieldState.fecha.isVisible ? update_form.formData.fecha : update_form.sourceData.fecha}}',
+    "producto" = '{{update_form.fieldState.producto.isVisible ? update_form.formData.producto : update_form.sourceData.producto}}',
+		"cantidad" = '{{update_form.fieldState.cantidad.isVisible ? update_form.formData.cantidad : update_form.sourceData.cantidad}}',
+		"cantidad_insumos" = '{{update_form.fieldState.cantidad_insumos.isVisible ? update_form.formData.cantidad_insumos : update_form.sourceData.cantidad_insumos}}',
+		"total" = {{update_form.fieldState.total.isVisible ? (update_form.formData.total || 0) : update_form.sourceData.total}}
+WHERE "id" = {{data_table.selectedRow.id}};

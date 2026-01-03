@@ -1,0 +1,2 @@
+DELETE FROM public."ordenes_compras_odoo"
+  WHERE "id" = {{data_table.triggeredRow.id}};

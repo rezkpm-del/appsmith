@@ -1,0 +1,16 @@
+INSERT INTO public."ordenes_compras_odoo" (
+	"id",
+	"cliente",
+	"fecha",
+	"producto",
+	"cantidad",
+	"cantidad_insumos",
+	"total")
+VALUES (
+	'{{insert_form.formData.id}}',
+	'{{insert_form.formData.cliente}}',
+	'{{insert_form.formData.fecha}}',
+	'{{insert_form.formData.producto}}',
+	'{{insert_form.formData.cantidad}}',
+	'{{insert_form.formData.cantidad_insumos}}',
+	'{{insert_form.formData.total}}');

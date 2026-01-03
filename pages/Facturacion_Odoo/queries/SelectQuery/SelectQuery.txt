@@ -1,0 +1,36 @@
+SELECT * FROM public.ordenes_compras_odoo
+WHERE
+  -- 1. FILTRO FECHA "DESDE"
+  -- Usamos TO_DATE para decirle a la base de datos que lea el formato Dia-Mes-Año
+  ( 
+    {{ !FechaDesde.formattedDate }} 
+    OR 
+    fecha >= TO_DATE({{ FechaDesde.formattedDate }}, 'DD-MM-YYYY') 
+  )
+  AND
+  
+  -- 2. FILTRO FECHA "HASTA"
+  ( 
+    {{ !FechaHasta.formattedDate }} 
+    OR 
+    fecha <= TO_DATE({{ FechaHasta.formattedDate }}, 'DD-MM-YYYY') 
+  )
+  AND
+
+  -- 3. FILTRO CLIENTE (MULTIPLE)
+  ( 
+    {{ SelectCliente.selectedOptionValues.length === 0 }} 
+    OR 
+    cliente = ANY ({{ SelectCliente.selectedOptionValues }}) 
+  )
+  AND
+
+  -- 4. FILTRO PRODUCTO (MULTIPLE)
+  ( 
+    {{ SelectProducto.selectedOptionValues.length === 0 }} 
+    OR 
+    producto = ANY ({{ SelectProducto.selectedOptionValues }}) 
+  )
+
+ORDER BY id DESC
+LIMIT 200;
