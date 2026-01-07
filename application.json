@@ -11,6 +11,10 @@
     {
       "id": "Facturacion_Odoo",
       "isDefault": true
+    },
+    {
+      "id": "Page1",
+      "isDefault": false
     }
   ],
   "unpublishedAppLayout": {

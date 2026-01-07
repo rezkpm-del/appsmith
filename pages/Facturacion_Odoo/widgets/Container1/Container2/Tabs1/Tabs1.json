@@ -5,7 +5,7 @@
   "borderColor": "#18181b",
   "borderRadius": "1.5rem",
   "borderWidth": "1",
-  "bottomRow": 135,
+  "bottomRow": 121,
   "boxShadow": "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
   "children": [
     {
@@ -56,7 +56,7 @@
     },
     {
       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-      "bottomRow": 1310,
+      "bottomRow": 1290,
       "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
       "canExtend": true,
       "detachFromLayout": true,
@@ -102,7 +102,7 @@
     },
     {
       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-      "bottomRow": 1310,
+      "bottomRow": 1130,
       "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
       "canExtend": false,
       "containerStyle": "none",
@@ -144,6 +144,51 @@
       "version": 1,
       "widgetId": "e035j3gpwf",
       "widgetName": "Canvas10"
+    },
+    {
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "bottomRow": 1130,
+      "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+      "canExtend": false,
+      "containerStyle": "none",
+      "detachFromLayout": true,
+      "dynamicBindingPathList": [
+        {
+          "key": "borderRadius"
+        },
+        {
+          "key": "boxShadow"
+        }
+      ],
+      "dynamicHeight": "AUTO_HEIGHT",
+      "dynamicTriggerPathList": [],
+      "flexLayers": [],
+      "isLoading": false,
+      "isVisible": true,
+      "key": "t275jfr8d3",
+      "leftColumn": 0,
+      "maxDynamicHeight": 9000,
+      "minDynamicHeight": 4,
+      "minHeight": 1950,
+      "minWidth": 450,
+      "mobileBottomRow": 1951,
+      "mobileLeftColumn": 0,
+      "mobileRightColumn": 678.8125,
+      "mobileTopRow": 1,
+      "needsErrorInfo": false,
+      "parentColumnSpace": 1,
+      "parentId": "05l5zlwgy1",
+      "parentRowSpace": 1,
+      "renderMode": "CANVAS",
+      "responsiveBehavior": "fill",
+      "rightColumn": 678.8125,
+      "tabId": "tab47cehv7ek0",
+      "tabName": "Facturado/No Facturado",
+      "topRow": 1,
+      "type": "CANVAS_WIDGET",
+      "version": 1,
+      "widgetId": "qef16rzxn1",
+      "widgetName": "Canvas11"
     }
   ],
   "defaultTab": "Graficos",
@@ -164,20 +209,21 @@
   "mobileRightColumn": 35,
   "mobileTopRow": 2,
   "needsErrorInfo": false,
-  "originalBottomRow": 195,
-  "originalTopRow": 0,
+  "originalBottomRow": 129,
+  "originalTopRow": 4,
   "parentColumnSpace": 10.6064453125,
   "parentId": "nk4nfp8q7b",
   "parentRowSpace": 10,
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
-  "rightColumn": 64,
+  "rightColumn": 63,
   "shouldScrollContents": true,
   "shouldShowTabs": true,
   "tabsObj": {
     "tab1": {
       "id": "tab1",
       "index": 0,
+      "isDuplicateLabel": false,
       "isVisible": true,
       "label": "Graficos",
       "positioning": "vertical",
@@ -186,20 +232,30 @@
     "tab2": {
       "id": "tab2",
       "index": 1,
+      "isDuplicateLabel": false,
       "isVisible": true,
       "label": "Tabla",
       "positioning": "vertical",
       "widgetId": "mbsh0coefc"
     },
+    "tab47cehv7ek0": {
+      "id": "tab47cehv7ek0",
+      "index": 2,
+      "isDuplicateLabel": false,
+      "isVisible": true,
+      "label": "Facturado/No Facturado",
+      "widgetId": "qef16rzxn1"
+    },
     "tabwbzjvty9v4": {
       "id": "tabwbzjvty9v4",
-      "index": 2,
+      "index": 3,
+      "isDuplicateLabel": false,
       "isVisible": true,
       "label": "Stock",
       "widgetId": "e035j3gpwf"
     }
   },
-  "topRow": 0,
+  "topRow": 4,
   "type": "TABS_WIDGET",
   "version": 3,
   "widgetId": "05l5zlwgy1",

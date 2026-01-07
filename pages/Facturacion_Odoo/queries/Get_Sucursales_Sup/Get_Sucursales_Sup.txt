@@ -1,0 +1,4 @@
+SELECT DISTINCT cliente as label, cliente as value
+FROM public.facturas
+WHERE cliente IS NOT NULL AND cliente != ''
+ORDER BY cliente ASC;

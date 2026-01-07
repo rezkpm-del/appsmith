@@ -1,0 +1,49 @@
+SELECT * FROM (
+    -- 1. SUB-CONSULTA: Calculamos la categoría
+    SELECT 
+        id,
+        fecha_vencimiento,
+        cliente,
+        numero,
+        total,
+        estado_pago,
+        (CASE
+            WHEN numero LIKE '00013%' THEN 'Facturado'
+            WHEN numero LIKE '0001%' OR numero LIKE '1-%' THEN 'No Facturado'
+            ELSE 'Otros'
+        END) as categoria
+    FROM public.facturas
+    WHERE numero NOT LIKE 'STJ%'
+) AS tabla_maestra
+
+-- 2. FILTROS
+WHERE 
+    -- A. Filtro de Categoría (Categoría seleccionada o TODOS)
+    (
+        {{ SelectCategoria.selectedOptionValue || 'TODOS' }} = 'TODOS'
+        OR
+        categoria = {{ SelectCategoria.selectedOptionValue || 'TODOS' }}
+    )
+
+    AND
+
+    -- B. Filtro de Sucursal (Lista de sucursales o vacío)
+    (
+        {{ SelectSucursal_Sup.selectedOptionValues.length === 0 }} 
+        OR 
+        cliente IN (
+            SELECT value 
+            FROM json_array_elements_text(
+                array_to_json(CAST({{ SelectSucursal_Sup.selectedOptionValues }} AS text[]))
+            )
+        )
+    )
+
+    AND
+
+    -- C. FILTRO DE FECHAS (Con Traductor DD-MM-YYYY)
+    (
+        fecha_vencimiento >= TO_DATE({{ FechaDesde_Sup.formattedDate }}, 'DD-MM-YYYY')
+        AND
+        fecha_vencimiento <= TO_DATE({{ FechaHasta_Sup.formattedDate }}, 'DD-MM-YYYY')
+    )

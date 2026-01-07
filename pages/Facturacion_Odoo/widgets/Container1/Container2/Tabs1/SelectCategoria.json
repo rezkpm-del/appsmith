@@ -1,0 +1,59 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "animateLoading": true,
+  "borderRadius": "1.5rem",
+  "bottomRow": 35,
+  "boxShadow": "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
+  "defaultOptionValue": "TODOS",
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    }
+  ],
+  "dynamicHeight": "FIXED",
+  "dynamicPropertyPathList": [
+    {
+      "key": "sourceData"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "isDisabled": false,
+  "isFilterable": true,
+  "isLoading": false,
+  "isRequired": false,
+  "isVisible": true,
+  "key": "5oo4ulfdib",
+  "labelAlignment": "left",
+  "labelPosition": "Top",
+  "labelText": "",
+  "labelTextColor": "#18181b",
+  "labelTextSize": "0.875rem",
+  "labelWidth": 5,
+  "leftColumn": 42,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 47,
+  "mobileLeftColumn": 25,
+  "mobileRightColumn": 45,
+  "mobileTopRow": 40,
+  "needsErrorInfo": false,
+  "optionLabel": "label",
+  "optionValue": "value",
+  "originalBottomRow": 35,
+  "originalTopRow": 31,
+  "parentColumnSpace": 11.900787353515625,
+  "parentId": "qef16rzxn1",
+  "parentRowSpace": 10,
+  "placeholderText": "Select option",
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 62,
+  "serverSideFiltering": false,
+  "sourceData": "[\n  {\n    \"label\": \"Ver Todos\",\n    \"value\": \"TODOS\"\n  },\n  {\n    \"label\": \"Facturado\",\n    \"value\": \"Facturado\"\n  },\n  {\n    \"label\": \"No Facturado\",\n    \"value\": \"No Facturado\"\n  },\n  {\n    \"label\": \"Otros\",\n    \"value\": \"Otros\"\n  }\n]",
+  "topRow": 31,
+  "type": "SELECT_WIDGET",
+  "version": 1,
+  "widgetId": "wmj6iqzvkq",
+  "widgetName": "SelectCategoria"
+}
