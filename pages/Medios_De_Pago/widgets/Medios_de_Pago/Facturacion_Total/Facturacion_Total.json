@@ -4,7 +4,7 @@
   "borderColor": "#E0DEDE",
   "borderRadius": "1.5rem",
   "borderWidth": "5",
-  "bottomRow": 12,
+  "bottomRow": 13,
   "boxShadow": "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
   "children": [
     {
@@ -58,7 +58,7 @@
   "isLoading": false,
   "isVisible": true,
   "key": "w1zpld76ok",
-  "leftColumn": 20,
+  "leftColumn": 23,
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 10,
   "mobileBottomRow": 14,
@@ -74,9 +74,9 @@
   "positioning": "fixed",
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
-  "rightColumn": 40,
+  "rightColumn": 43,
   "shouldScrollContents": true,
-  "topRow": 0,
+  "topRow": 1,
   "type": "STATBOX_WIDGET",
   "widgetId": "fr7cfwvvee",
   "widgetName": "Facturacion_Total"
