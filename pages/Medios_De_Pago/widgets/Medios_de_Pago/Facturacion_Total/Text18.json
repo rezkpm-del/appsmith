@@ -39,7 +39,7 @@
   "parentId": "nxh4js1q6e",
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
-  "rightColumn": 64,
+  "rightColumn": 63,
   "shouldTruncate": false,
   "text": "{{ \n  (Get_Ventas_Total.data && Get_Ventas_Total.data.length > 0) \n  ? Get_Ventas_Total.data[0].total_vendido.toLocaleString('es-AR', { style: 'currency', currency: 'ARS' }) \n  : '$ 0' \n}}",
   "textAlign": "LEFT",
