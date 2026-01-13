@@ -1,44 +1,42 @@
 SELECT 
     COUNT(DISTINCT v.IdVenta) as cantidad_tickets,
     
-    -- 1. TOTAL VENDIDO: Sumamos directamente los pagos (coincidirá con el gráfico)
+    -- Sumamos los cobros
     SUM(vc.Monto) as total_vendido,
 
-    -- 2. DESGLOSE "BLANCO" (Facturado) PROPORCIONAL
-    -- Si el ticket es Fiscal, sumamos este pago al total facturado
+    -- Desglose proporcional (Mismo cálculo de antes)
     SUM(CASE 
         WHEN COALESCE(v.Factura_ComprobanteFiscal, '') <> 'TNF' THEN vc.Monto 
         ELSE 0 
     END) as total_facturado,
 
-    -- 3. DESGLOSE "NEGRO" (No Facturado) PROPORCIONAL
-    -- Si el ticket es TNF, sumamos este pago al total NO facturado
     SUM(CASE 
         WHEN COALESCE(v.Factura_ComprobanteFiscal, '') = 'TNF' THEN vc.Monto 
         ELSE 0 
     END) as total_no_facturado,
 
-    -- 4. IVA PROPORCIONAL (Cálculo matemático)
-    -- Regla de 3: (MontoPago / MontoTotalTicket) * MontoIVAOriginal
     SUM(
         CASE 
-            WHEN v.Factura_MontoTotal > 0 AND v.Factura_MontoIVA > 0
+            WHEN v.Factura_MontoTotal > 0 
             THEN (vc.Monto / v.Factura_MontoTotal) * v.Factura_MontoIVA
             ELSE 0 
         END
     ) as total_iva
 
 FROM ventas_cobranzas vc
-INNER JOIN ventas v ON vc.IdVenta = v.IdVenta
+INNER JOIN ventas v ON 
+    vc.IdVenta = v.IdVenta 
+    AND vc.IdSucursal = v.IdSucursal -- 🔒 Candado 1: Misma Sucursal
 
 WHERE 
     v.FechaContable >= '{{ DatePicker1.formattedDate }}'
     AND v.FechaContable <= '{{ DatePicker2.formattedDate }}'
     
-    -- Filtro de Sucursal (Blindado)
+    -- 🔒 Candado 2: Asegurar que el cobro no sea viejo (opcional pero recomendado)
+    -- Si 'ventas_cobranzas' tiene fecha, úsala. Si no, confiamos en el JOIN de arriba.
+    
     AND v.IdSucursal IN ({{ MultiTreeSelect1.selectedOptionValues.length > 0 ? MultiTreeSelect1.selectedOptionValues.join(',') : '0' }})
 
-    -- Filtro de Medio de Pago (Blindado)
     AND (
         {{ MultiTreeSelect2.selectedOptionValues.length === 0 }} 
         OR 

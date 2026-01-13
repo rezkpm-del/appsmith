@@ -1,0 +1,12 @@
+SELECT 
+    vc.IdValorTipo,
+    vt.Titulo as Nombre_Sistema,
+    COUNT(*) as Cantidad_Tickets,
+    SUM(vc.Monto) as Total_Plata
+FROM ventas_cobranzas vc
+LEFT JOIN valorestipo vt ON vc.IdValorTipo = vt.Codigo
+WHERE 
+    vc.IdSucursal IN (1, 2, 3, 4) -- (O quita esta linea para ver todas)
+    AND vc.IdVenta IN (SELECT IdVenta FROM ventas WHERE FechaContable BETWEEN '2025-12-01' AND '2025-12-31')
+GROUP BY vc.IdValorTipo, vt.Titulo
+ORDER BY Total_Plata DESC
