@@ -1,11 +1,12 @@
 {
   "gitSyncId": "694ebec5a56d53482b864ab0_549ffafd-4663-48ad-ae36-5ef72df22059",
   "unpublishedPage": {
+    "isHidden": false,
     "layouts": [
       {
         "dsl": {
           "backgroundColor": "none",
-          "bottomRow": 390,
+          "bottomRow": 1090,
           "canExtend": true,
           "containerStyle": "none",
           "detachFromLayout": true,
@@ -25,7 +26,7 @@
         }
       }
     ],
-    "name": "Page1",
-    "slug": "page1"
+    "name": "Medios_De_Pago",
+    "slug": "medios-de-pago"
   }
 }

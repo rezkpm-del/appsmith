@@ -1,9 +1,9 @@
 {
   "accentColor": "{{appsmith.theme.colors.primaryColor}}",
   "animateLoading": true,
-  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 21,
-  "boxShadow": "none",
+  "borderRadius": "1.5rem",
+  "bottomRow": 45,
+  "boxShadow": "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)",
   "closeOnSelection": true,
   "dateFormat": "YYYY-MM-DD",
   "datePickerType": "DATE_PICKER",
@@ -11,9 +11,6 @@
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
-    },
-    {
-      "key": "borderRadius"
     }
   ],
   "dynamicHeight": "FIXED",
@@ -24,12 +21,12 @@
   "isRequired": false,
   "isVisible": true,
   "key": "mkj6l9wbg0",
-  "label": "Desde",
+  "label": "",
   "labelAlignment": "left",
   "labelPosition": "Top",
   "labelTextSize": "0.875rem",
   "labelWidth": 5,
-  "leftColumn": 3,
+  "leftColumn": 44,
   "maxDate": "2121-12-31T18:29:00.000Z",
   "maxDynamicHeight": 9000,
   "minDate": "1920-12-31T18:30:00.000Z",
@@ -40,17 +37,19 @@
   "mobileRightColumn": 23,
   "mobileTopRow": 14,
   "needsErrorInfo": false,
+  "originalBottomRow": 45,
+  "originalTopRow": 40,
   "parentColumnSpace": 13.921875,
   "parentId": "koednfmv6r",
   "parentRowSpace": 10,
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
-  "rightColumn": 23,
+  "rightColumn": 58,
   "shortcuts": false,
   "timePrecision": "minute",
-  "topRow": 14,
+  "topRow": 40,
   "type": "DATE_PICKER_WIDGET2",
   "version": 2,
-  "widgetId": "yqh8n1tx99",
-  "widgetName": "DatePicker1"
+  "widgetId": "wgd55j4ohn",
+  "widgetName": "DatePicker2"
 }
