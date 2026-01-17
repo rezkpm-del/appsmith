@@ -41,7 +41,7 @@
   "responsiveBehavior": "fill",
   "rightColumn": 53,
   "shouldTruncate": false,
-  "text": "{{ \n  (Get_Ventas_Total.data && Get_Ventas_Total.data.length > 0) \n  ? Get_Ventas_Total.data[0].total_iva.toLocaleString('es-AR', { style: 'currency', currency: 'ARS' }) \n  : '$ 0' \n}}",
+  "text": "{{ \n  (() => {\n    const datos = Get_Ventas_Total.data || [];\n    const seleccion = MultiTreeSelect2.selectedOptionValues;\n    \n    const datosFiltrados = (seleccion.length === 0) ? datos : datos.filter(item => seleccion.includes(item.Medio_Pago));\n\n    // Sumamos la columna IVA\n    return datosFiltrados.reduce((acc, item) => acc + item.Total_IVA_Real, 0)\n      .toLocaleString('es-AR', { style: 'currency', currency: 'ARS', minimumFractionDigits: 0 });\n  })()\n}}",
   "textAlign": "LEFT",
   "textColor": "#1f2937",
   "topRow": 4,

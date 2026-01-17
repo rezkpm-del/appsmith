@@ -7,7 +7,7 @@
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "chartData": {
     "hdjbkn0as5": {
-      "data": "{{ \n  (Get_Pagos_Detalle.data || []).map( item => ({\n    x: item.medio_pago,              // La etiqueta (Nombre)\n    y: parseFloat(item.total_cobrado) // El valor (Número)\n  }))\n}}",
+      "data": "{{ \n  (Get_Ventas_Total.data || []).map( item => {\n    return {\n      x: item.Medio_Pago,        // Antes era item.medio_pago\n      y: item.Total_Venta_Real   // Antes era item.total_cobrado\n    };\n  })\n}}",
       "seriesName": "2023"
     }
   },
@@ -110,5 +110,5 @@
   "widgetId": "hg38xxhwpy",
   "widgetName": "Chart1",
   "xAxisName": "medio_pago",
-  "yAxisName": "total_cobrado"
+  "yAxisName": "total_venta"
 }

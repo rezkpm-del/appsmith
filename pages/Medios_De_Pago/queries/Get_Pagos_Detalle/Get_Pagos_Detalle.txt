@@ -1,27 +1,24 @@
 SELECT 
-    -- Buscamos el nombre de forma segura (LIMIT 1 evita duplicados)
     COALESCE(
         (SELECT Titulo FROM valorestipo WHERE Codigo = vc.IdValorTipo LIMIT 1), 
         CONCAT('Codigo ', vc.IdValorTipo)
     ) as medio_pago,
-
     SUM(vc.Monto) as total_cobrado
 
 FROM ventas_cobranzas vc
-INNER JOIN ventas v ON vc.IdVenta = v.IdVenta
-
--- YA NO hacemos JOIN con valorestipo aquí para evitar duplicación
--- LEFT JOIN valorestipo vt ON ... (BORRADO)
+INNER JOIN ventas v ON 
+    vc.IdVenta = v.IdVenta 
+    AND vc.IdSucursal = v.IdSucursal
 
 WHERE 
     v.FechaContable >= '{{ DatePicker1.formattedDate }}'
-    AND 
-    v.FechaContable <= '{{ DatePicker2.formattedDate }}'
+    AND v.FechaContable <= '{{ DatePicker2.formattedDate }}'
     
-    -- Filtro de Sucursal
-    AND v.IdSucursal IN ({{ MultiTreeSelect1.selectedOptionValues.length > 0 ? MultiTreeSelect1.selectedOptionValues.join(',') : '0' }})
+    -- 👇 FILTRO DE ESTADO
+    AND v.Estado = 'C'
 
-    -- Filtro de Medio de Pago
+    -- Filtros UI
+    AND v.IdSucursal IN ({{ MultiTreeSelect1.selectedOptionValues.length > 0 ? MultiTreeSelect1.selectedOptionValues.join(',') : '0' }})
     AND (
         {{ MultiTreeSelect2.selectedOptionValues.length === 0 }} 
         OR 

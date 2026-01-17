@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 9,
+  "bottomRow": 10,
   "dynamicBindingPathList": [
     {
       "key": "truncateButtonColor"
@@ -24,7 +24,7 @@
   "isLoading": false,
   "isVisible": true,
   "key": "u9rlw771cb",
-  "leftColumn": 0,
+  "leftColumn": 5,
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 4,
   "minWidth": 450,
@@ -39,12 +39,12 @@
   "parentId": "nxh4js1q6e",
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
-  "rightColumn": 63,
+  "rightColumn": 57,
   "shouldTruncate": false,
-  "text": "{{ \n  (Get_Ventas_Total.data && Get_Ventas_Total.data.length > 0) \n  ? Get_Ventas_Total.data[0].total_vendido.toLocaleString('es-AR', { style: 'currency', currency: 'ARS' }) \n  : '$ 0' \n}}",
+  "text": "{{ \n  (() => {\n    // 1. Datos completos del SQL\n    const datos = Get_Ventas_Total.data || [];\n    \n    // 2. Lo que seleccionaste en el filtro (Ahora son Nombres: ['Rappi', 'Visa'])\n    const seleccion = MultiTreeSelect2.selectedOptionValues;\n\n    // 3. Filtrado Inteligente\n    // Si la lista de selección está vacía, sumamos TODO.\n    // Si tiene algo, sumamos solo lo que coincida con el nombre.\n    const datosFiltrados = (seleccion.length === 0) \n        ? datos \n        : datos.filter(item => seleccion.includes(item.Medio_Pago));\n\n    // 4. Suma final\n    return datosFiltrados.reduce((acc, item) => acc + item.Total_Venta_Real, 0)\n      .toLocaleString('es-AR', { style: 'currency', currency: 'ARS', minimumFractionDigits: 0 });\n  })()\n}}",
   "textAlign": "LEFT",
   "textColor": "#1f2937",
-  "topRow": 4,
+  "topRow": 5,
   "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
   "type": "TEXT_WIDGET",
   "version": 1,

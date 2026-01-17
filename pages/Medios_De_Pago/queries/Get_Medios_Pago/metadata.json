@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT DISTINCT \n    vt.Codigo as value, \n    vt.Titulo as label \n\nFROM ventas_cobranzas vc\nINNER JOIN ventas v ON vc.IdVenta = v.IdVenta\nINNER JOIN valorestipo vt ON vc.IdValorTipo = vt.Codigo\n\nWHERE \n    v.FechaContable >= '{{ DatePicker1.formattedDate }}'\n    AND \n    v.FechaContable <= '{{ DatePicker2.formattedDate }}'\n    \n    -- ✅ PROTECCIÓN: Si no hay sucursal seleccionada, ponemos '0' para que no dé error\n    AND v.IdSucursal IN ({{ MultiTreeSelect1.selectedOptionValues.length > 0 ? MultiTreeSelect1.selectedOptionValues.join(',') : '0' }})\n\nORDER BY vt.Titulo ASC",
+      "body": "SELECT DISTINCT\n    vt.Titulo as value,  -- 👈 CAMBIO CLAVE: Usamos el Título como valor, no el Código\n    vt.Titulo as label   -- El Título también es la etiqueta visual\nFROM ventas_cobranzas vc\nINNER JOIN ventas v ON vc.IdVenta = v.IdVenta\nINNER JOIN valorestipo vt ON vc.IdValorTipo = vt.Codigo\nWHERE \n    v.FechaContable >= '{{ DatePicker1.formattedDate }}'\n    AND\n    v.FechaContable <= '{{ DatePicker2.formattedDate }}'\n    \n    -- Mantenemos tu protección de sucursal\n    AND v.IdSucursal IN ({{ MultiTreeSelect1.selectedOptionValues.length > 0 ? MultiTreeSelect1.selectedOptionValues.join(',') : '0' }})\n\nORDER BY vt.Titulo ASC",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

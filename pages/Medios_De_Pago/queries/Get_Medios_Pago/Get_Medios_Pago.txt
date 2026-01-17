@@ -1,17 +1,15 @@
-SELECT DISTINCT 
-    vt.Codigo as value, 
-    vt.Titulo as label 
-
+SELECT DISTINCT
+    vt.Titulo as value,  -- 👈 CAMBIO CLAVE: Usamos el Título como valor, no el Código
+    vt.Titulo as label   -- El Título también es la etiqueta visual
 FROM ventas_cobranzas vc
 INNER JOIN ventas v ON vc.IdVenta = v.IdVenta
 INNER JOIN valorestipo vt ON vc.IdValorTipo = vt.Codigo
-
 WHERE 
     v.FechaContable >= '{{ DatePicker1.formattedDate }}'
-    AND 
+    AND
     v.FechaContable <= '{{ DatePicker2.formattedDate }}'
     
-    -- ✅ PROTECCIÓN: Si no hay sucursal seleccionada, ponemos '0' para que no dé error
+    -- Mantenemos tu protección de sucursal
     AND v.IdSucursal IN ({{ MultiTreeSelect1.selectedOptionValues.length > 0 ? MultiTreeSelect1.selectedOptionValues.join(',') : '0' }})
 
 ORDER BY vt.Titulo ASC

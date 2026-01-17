@@ -1,0 +1,3 @@
+SELECT IdArticulo, Codigo, Descripcion 
+FROM articulos 
+WHERE Codigo = '10001185';

@@ -1,6 +1,6 @@
 {
-  "gitSyncId": "694ebec5a56d53482b864ab0_e6c29b12-dfaa-44de-bb40-b7472e658968",
-  "id": "Medios_De_Pago_Get_Ventas_Total",
+  "gitSyncId": "694ebec5a56d53482b864ab0_5ed88c1d-8197-4725-9764-84ff3196ffa0",
+  "id": "Medios_De_Pago_Query1",
   "pluginId": "mysql-plugin",
   "pluginType": "DB",
   "unpublishedAction": {
@@ -10,10 +10,10 @@
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
         {
-          "value": false
+          "value": true
         }
       ],
-      "timeoutInMillisecond": 20000
+      "timeoutInMillisecond": 10000
     },
     "confirmBeforeExecute": false,
     "datasource": {
@@ -27,9 +27,9 @@
         "key": "body"
       }
     ],
-    "name": "Get_Ventas_Total",
+    "name": "Query1",
     "pageId": "Medios_De_Pago",
-    "runBehaviour": "AUTOMATIC",
-    "userSetOnLoad": true
+    "runBehaviour": "MANUAL",
+    "userSetOnLoad": false
   }
 }

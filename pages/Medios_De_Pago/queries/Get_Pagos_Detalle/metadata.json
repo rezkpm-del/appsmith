@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT \n    -- Buscamos el nombre de forma segura (LIMIT 1 evita duplicados)\n    COALESCE(\n        (SELECT Titulo FROM valorestipo WHERE Codigo = vc.IdValorTipo LIMIT 1), \n        CONCAT('Codigo ', vc.IdValorTipo)\n    ) as medio_pago,\n\n    SUM(vc.Monto) as total_cobrado\n\nFROM ventas_cobranzas vc\nINNER JOIN ventas v ON vc.IdVenta = v.IdVenta\n\n-- YA NO hacemos JOIN con valorestipo aquí para evitar duplicación\n-- LEFT JOIN valorestipo vt ON ... (BORRADO)\n\nWHERE \n    v.FechaContable >= '{{ DatePicker1.formattedDate }}'\n    AND \n    v.FechaContable <= '{{ DatePicker2.formattedDate }}'\n    \n    -- Filtro de Sucursal\n    AND v.IdSucursal IN ({{ MultiTreeSelect1.selectedOptionValues.length > 0 ? MultiTreeSelect1.selectedOptionValues.join(',') : '0' }})\n\n    -- Filtro de Medio de Pago\n    AND (\n        {{ MultiTreeSelect2.selectedOptionValues.length === 0 }} \n        OR \n        vc.IdValorTipo IN ({{ MultiTreeSelect2.selectedOptionValues.length > 0 ? MultiTreeSelect2.selectedOptionValues.join(',') : '0' }})\n    )\n\nGROUP BY vc.IdValorTipo\nORDER BY total_cobrado DESC",
+      "body": "SELECT \n    COALESCE(\n        (SELECT Titulo FROM valorestipo WHERE Codigo = vc.IdValorTipo LIMIT 1), \n        CONCAT('Codigo ', vc.IdValorTipo)\n    ) as medio_pago,\n    SUM(vc.Monto) as total_cobrado\n\nFROM ventas_cobranzas vc\nINNER JOIN ventas v ON \n    vc.IdVenta = v.IdVenta \n    AND vc.IdSucursal = v.IdSucursal\n\nWHERE \n    v.FechaContable >= '{{ DatePicker1.formattedDate }}'\n    AND v.FechaContable <= '{{ DatePicker2.formattedDate }}'\n    \n    -- 👇 FILTRO DE ESTADO\n    AND v.Estado = 'C'\n\n    -- Filtros UI\n    AND v.IdSucursal IN ({{ MultiTreeSelect1.selectedOptionValues.length > 0 ? MultiTreeSelect1.selectedOptionValues.join(',') : '0' }})\n    AND (\n        {{ MultiTreeSelect2.selectedOptionValues.length === 0 }} \n        OR \n        vc.IdValorTipo IN ({{ MultiTreeSelect2.selectedOptionValues.length > 0 ? MultiTreeSelect2.selectedOptionValues.join(',') : '0' }})\n    )\n\nGROUP BY vc.IdValorTipo\nORDER BY total_cobrado DESC",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
@@ -13,7 +13,7 @@
           "value": false
         }
       ],
-      "timeoutInMillisecond": 20000
+      "timeoutInMillisecond": 30000
     },
     "confirmBeforeExecute": false,
     "datasource": {
