@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 9,
+  "bottomRow": 8,
   "dynamicBindingPathList": [
     {
       "key": "truncateButtonColor"
@@ -44,7 +44,7 @@
   "text": "{{ \n  (() => {\n    // 1. Datos\n    const datos = Get_Ventas_Total.data || [];\n    \n    // 2. Filtro de Medios de Pago\n    const seleccion = MultiTreeSelect2.selectedOptionValues;\n    \n    // 3. Filtramos (Si no hay nada seleccionado, usa todo)\n    const datosFiltrados = (seleccion.length === 0) \n        ? datos \n        : datos.filter(item => seleccion.includes(item.Medio_Pago));\n\n    // 4. Sumamos la columna específica 'Total_No_Facturado'\n    return datosFiltrados.reduce((acc, item) => acc + item.Total_No_Facturado, 0)\n      .toLocaleString('es-AR', { style: 'currency', currency: 'ARS', minimumFractionDigits: 0 });\n  })()\n}}",
   "textAlign": "LEFT",
   "textColor": "#1f2937",
-  "topRow": 5,
+  "topRow": 4,
   "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
   "type": "TEXT_WIDGET",
   "version": 1,

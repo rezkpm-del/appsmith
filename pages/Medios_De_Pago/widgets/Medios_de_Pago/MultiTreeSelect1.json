@@ -3,7 +3,7 @@
   "allowClear": false,
   "animateLoading": true,
   "borderRadius": "1.5rem",
-  "bottomRow": 35,
+  "bottomRow": 34,
   "boxShadow": "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)",
   "defaultOptionValue": "1",
   "dynamicBindingPathList": [
@@ -44,7 +44,7 @@
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
   "rightColumn": 23,
-  "topRow": 31,
+  "topRow": 30,
   "type": "MULTI_SELECT_TREE_WIDGET",
   "version": 1,
   "widgetId": "rjp6xt2eph",

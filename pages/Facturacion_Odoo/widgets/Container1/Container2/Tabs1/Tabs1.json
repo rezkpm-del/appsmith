@@ -5,12 +5,12 @@
   "borderColor": "#18181b",
   "borderRadius": "1.5rem",
   "borderWidth": "1",
-  "bottomRow": 201,
+  "bottomRow": 206,
   "boxShadow": "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
   "children": [
     {
       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-      "bottomRow": 1930,
+      "bottomRow": 1980,
       "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
       "canExtend": true,
       "detachFromLayout": true,
@@ -56,7 +56,7 @@
     },
     {
       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-      "bottomRow": 1930,
+      "bottomRow": 1980,
       "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
       "canExtend": true,
       "detachFromLayout": true,
@@ -102,7 +102,7 @@
     },
     {
       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-      "bottomRow": 1930,
+      "bottomRow": 1980,
       "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
       "canExtend": false,
       "containerStyle": "none",
@@ -147,7 +147,7 @@
     },
     {
       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-      "bottomRow": 1930,
+      "bottomRow": 1980,
       "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
       "canExtend": false,
       "containerStyle": "none",
@@ -209,7 +209,7 @@
   "mobileRightColumn": 35,
   "mobileTopRow": 2,
   "needsErrorInfo": false,
-  "originalBottomRow": 199,
+  "originalBottomRow": 205,
   "originalTopRow": 4,
   "parentColumnSpace": 10.6064453125,
   "parentId": "nk4nfp8q7b",
