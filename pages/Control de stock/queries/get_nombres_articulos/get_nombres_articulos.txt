@@ -1,0 +1,1 @@
+SELECT IdArticulo, Descripcion FROM articulos;

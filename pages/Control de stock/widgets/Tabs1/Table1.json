@@ -32,12 +32,12 @@
     }
   },
   "columnOrder": [
-    "Vendido",
-    "ID",
     "Stock_Inicial1",
-    "Stock_Actual1"
+    "Vendido",
+    "Stock_Actual1",
+    "Insumo"
   ],
-  "columnUpdatedAt": 1769871170154,
+  "columnUpdatedAt": 1769872011813,
   "columnWidthMap": {},
   "customIsLoading": false,
   "customIsLoadingValue": "",
@@ -64,13 +64,13 @@
       "key": "primaryColumns.Vendido.computedValue"
     },
     {
-      "key": "primaryColumns.ID.computedValue"
-    },
-    {
       "key": "primaryColumns.Stock_Inicial1.computedValue"
     },
     {
       "key": "primaryColumns.Stock_Actual1.computedValue"
+    },
+    {
+      "key": "primaryColumns.Insumo.computedValue"
     }
   ],
   "dynamicPropertyPathList": [
@@ -104,18 +104,18 @@
   "parentId": "fib1ryr076",
   "parentRowSpace": 10,
   "primaryColumns": {
-    "ID": {
-      "alias": "ID",
+    "Insumo": {
+      "alias": "Insumo",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
-      "columnType": "number",
-      "computedValue": "{{(() => { const tableData = Table1.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"ID\"])) : ID })()}}",
+      "columnType": "text",
+      "computedValue": "{{(() => { const tableData = Table1.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"Insumo\"])) : Insumo })()}}",
       "currencyCode": "USD",
       "decimals": 0,
       "enableFilter": true,
       "enableSort": true,
       "horizontalAlignment": "LEFT",
-      "id": "ID",
+      "id": "Insumo",
       "index": 0,
       "isCellEditable": false,
       "isCellVisible": true,
@@ -125,9 +125,9 @@
       "isEditable": false,
       "isSaveVisible": true,
       "isVisible": true,
-      "label": "ID",
+      "label": "Insumo",
       "notation": "standard",
-      "originalId": "ID",
+      "originalId": "Insumo",
       "sticky": "",
       "textSize": "0.875rem",
       "thousandSeparator": true,
