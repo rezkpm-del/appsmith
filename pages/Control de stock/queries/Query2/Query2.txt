@@ -1,0 +1,11 @@
+SELECT 
+    vi.IdArticulo, 
+    SUM(vi.Cantidad) as cant_vendida 
+FROM ventas_items vi
+-- Unimos con la tabla de ventas para obtener la fecha
+INNER JOIN ventas v ON vi.IdVenta = v.IdVenta
+WHERE v.IdSucursal = {{sel_sucursal.selectedOptionValue}}
+-- Ahora sí usamos la fecha de la tabla 'ventas'
+AND v.FechaContable >= {{fecha_inicio.formattedDate}} 
+AND v.FechaContable <= {{fecha_fin.formattedDate}}
+GROUP BY vi.IdArticulo;

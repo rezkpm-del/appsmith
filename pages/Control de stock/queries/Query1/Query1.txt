@@ -1,0 +1,1 @@
+SELECT IdSucursal as value, Nombre as label FROM tvc_sucursal;

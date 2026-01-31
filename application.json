@@ -15,6 +15,10 @@
     {
       "id": "Medios_De_Pago",
       "isDefault": false
+    },
+    {
+      "id": "Control de stock",
+      "isDefault": false
     }
   ],
   "unpublishedAppLayout": {

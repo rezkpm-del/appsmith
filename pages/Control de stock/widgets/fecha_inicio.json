@@ -1,31 +1,44 @@
 {
   "accentColor": "{{appsmith.theme.colors.primaryColor}}",
   "animateLoading": true,
-  "borderRadius": "1.5rem",
-  "bottomRow": 93,
-  "boxShadow": "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 43,
+  "boxShadow": "none",
   "closeOnSelection": true,
-  "dateFormat": "DD-MM-YYYY",
+  "dateFormat": "YYYY-MM-DD",
   "datePickerType": "DATE_PICKER",
-  "defaultDate": "2025-12-27T12:12:07.629Z",
+  "defaultDate": "{{moment().subtract(7, 'days').format('YYYY-MM-DD')}}",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "defaultDate"
     }
   ],
   "dynamicHeight": "FIXED",
-  "dynamicTriggerPathList": [],
+  "dynamicPropertyPathList": [
+    {
+      "key": "defaultDate"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onDateSelected"
+    }
+  ],
   "firstDayOfWeek": 0,
   "isDisabled": false,
   "isLoading": false,
   "isRequired": false,
   "isVisible": true,
-  "key": "8x4tilcw5l",
-  "label": "",
+  "key": "clrv98rz8v",
+  "label": "Fecha_inicio",
   "labelAlignment": "left",
   "labelPosition": "Top",
-  "labelStyle": "",
-  "labelTextColor": "#f4f4f5",
   "labelTextSize": "0.875rem",
   "labelWidth": 5,
   "leftColumn": 5,
@@ -34,24 +47,23 @@
   "minDate": "1920-12-31T18:30:00.000Z",
   "minDynamicHeight": 4,
   "minWidth": 450,
-  "mobileBottomRow": 8,
-  "mobileLeftColumn": 42,
-  "mobileRightColumn": 62,
-  "mobileTopRow": 1,
+  "mobileBottomRow": 43,
+  "mobileLeftColumn": 5,
+  "mobileRightColumn": 25,
+  "mobileTopRow": 36,
   "needsErrorInfo": false,
-  "originalBottomRow": 94,
-  "originalTopRow": 89,
-  "parentColumnSpace": 7.345703125,
-  "parentId": "tp0m049tgh",
+  "onDateSelected": "{{Query2.run().then(() => {\n  JSObject3.fecha_inicioonDateSelected();\n});}}",
+  "parentColumnSpace": 10.640625,
+  "parentId": "0",
   "parentRowSpace": 10,
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
   "rightColumn": 25,
   "shortcuts": false,
   "timePrecision": "minute",
-  "topRow": 88,
+  "topRow": 36,
   "type": "DATE_PICKER_WIDGET2",
   "version": 2,
-  "widgetId": "g67pb11pbc",
-  "widgetName": "FechaDesde"
+  "widgetId": "17hyolh4yy",
+  "widgetName": "fecha_inicio"
 }

@@ -1,0 +1,5 @@
+SELECT 
+    IdArticulo, 
+    Cantidad as stock_inicial 
+FROM stock_resumenes 
+WHERE IdSucursal = {{sel_sucursal.selectedOptionValue}};

@@ -1,0 +1,1 @@
+JSObject1.obtenerReporteInsumos
