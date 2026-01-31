@@ -4,7 +4,7 @@
   "borderColor": "#E0DEDE",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": "1",
-  "bottomRow": 29,
+  "bottomRow": 84,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "cachedTableData": {},
   "canFreezeColumn": true,
@@ -32,12 +32,12 @@
     }
   },
   "columnOrder": [
+    "Insumo",
     "Stock_Inicial1",
     "Vendido",
-    "Stock_Actual1",
-    "Insumo"
+    "Stock_Actual1"
   ],
-  "columnUpdatedAt": 1769872011813,
+  "columnUpdatedAt": 1769872368969,
   "columnWidthMap": {},
   "customIsLoading": false,
   "customIsLoadingValue": "",

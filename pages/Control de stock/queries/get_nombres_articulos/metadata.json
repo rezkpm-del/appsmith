@@ -25,7 +25,7 @@
     "dynamicBindingPathList": [],
     "name": "get_nombres_articulos",
     "pageId": "Control de stock",
-    "runBehaviour": "MANUAL",
+    "runBehaviour": "AUTOMATIC",
     "userSetOnLoad": false
   }
 }
