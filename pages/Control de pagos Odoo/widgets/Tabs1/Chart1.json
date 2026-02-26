@@ -8,7 +8,7 @@
   "chartData": {
     "96fqstwbg2": {
       "data": "{{\n  [\n    {\n      \"x\": \"Cobrado\",\n      \"y\": get_facturas.data.filter(f => f.estado_pago === 'paid').reduce((suma, f) => suma + (Number(f.total) || 0), 0)\n    },\n    {\n      \"x\": \"Deuda (Sin Pagar)\",\n      \"y\": get_facturas.data.filter(f => f.estado_pago === 'not_paid').reduce((suma, f) => suma + (Number(f.total) || 0), 0)\n    }\n  ]\n}}",
-      "seriesName": "2023"
+      "seriesName": ""
     }
   },
   "chartName": "Reporte de pagos",
