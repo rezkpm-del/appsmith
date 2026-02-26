@@ -1,49 +1,53 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 109,
+  "bottomRow": 8,
   "dynamicBindingPathList": [
     {
       "key": "truncateButtonColor"
     },
     {
+      "key": "fontFamily"
+    },
+    {
       "key": "borderRadius"
+    },
+    {
+      "key": "text"
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
   "dynamicTriggerPathList": [],
-  "fontFamily": "Rubik",
-  "fontSize": "1rem",
-  "fontStyle": "BOLD,ITALIC",
+  "fontFamily": "{{appsmith.theme.fontFamily.appFont}}",
+  "fontSize": "1.25rem",
+  "fontStyle": "BOLD",
   "isLoading": false,
   "isVisible": true,
-  "key": "c36xbza2rn",
-  "leftColumn": 46,
+  "key": "voafnd7hxv",
+  "leftColumn": 19,
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 4,
   "minWidth": 450,
-  "mobileBottomRow": 16,
-  "mobileLeftColumn": 6,
-  "mobileRightColumn": 22,
-  "mobileTopRow": 12,
+  "mobileBottomRow": 8,
+  "mobileLeftColumn": 1,
+  "mobileRightColumn": 37,
+  "mobileTopRow": 4,
   "needsErrorInfo": false,
-  "originalBottomRow": 109,
-  "originalTopRow": 105,
+  "originalBottomRow": 9,
+  "originalTopRow": 5,
   "overflow": "NONE",
-  "parentColumnSpace": 10.6064453125,
-  "parentId": "tp0m049tgh",
-  "parentRowSpace": 10,
+  "parentId": "uh98hr4x4r",
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
-  "rightColumn": 53,
+  "rightColumn": 41,
   "shouldTruncate": false,
-  "text": "Hasta",
-  "textAlign": "CENTER",
+  "text": "{{\n  get_facturas.data.filter(factura => factura.estado_pago === 'not_paid').length\n}}",
+  "textAlign": "LEFT",
   "textColor": "#231F20",
-  "topRow": 105,
+  "topRow": 4,
   "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
   "type": "TEXT_WIDGET",
   "version": 1,
-  "widgetId": "0h0pwxh66i",
-  "widgetName": "Text19"
+  "widgetId": "6z33csm73b",
+  "widgetName": "Text5Copy"
 }

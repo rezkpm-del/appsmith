@@ -3,17 +3,16 @@
   "allowScroll": false,
   "animateLoading": true,
   "borderRadius": "1.5rem",
-  "bottomRow": 162,
-  "boxShadow": "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
+  "bottomRow": 34,
+  "boxShadow": "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)",
   "chartData": {
-    "7mhc5r2zb1": {
-      "color": "#DD4B34",
-      "data": "{{ \n  SelectQuery.data.map( item => ({ \n    x: item.producto, \n    y: item.cantidad_insumos\n    \n  })) \n}}",
-      "seriesName": ""
+    "96fqstwbg2": {
+      "data": "{{\n  [\n    {\n      \"x\": \"Cobrado\",\n      \"y\": get_facturas.data.filter(f => f.estado_pago === 'paid').reduce((suma, f) => suma + (Number(f.total) || 0), 0)\n    },\n    {\n      \"x\": \"Deuda (Sin Pagar)\",\n      \"y\": get_facturas.data.filter(f => f.estado_pago === 'not_paid').reduce((suma, f) => suma + (Number(f.total) || 0), 0)\n    }\n  ]\n}}",
+      "seriesName": "2023"
     }
   },
-  "chartName": "Venta - Productos",
-  "chartType": "BAR_CHART",
+  "chartName": "Reporte de pagos",
+  "chartType": "PIE_CHART",
   "customEChartConfig": "{{\n{\n  \"dataset\": {\n    \"source\": [\n      [\n        \"Day\",\n        \"Baidu\",\n        \"Google\",\n        \"Bing\"\n      ],\n      [\n        \"Mon\",\n        620,\n        120,\n        60\n      ],\n      [\n        \"Tue\",\n        732,\n        132,\n        72\n      ],\n      [\n        \"Wed\",\n        701,\n        101,\n        71\n      ],\n      [\n        \"Thu\",\n        734,\n        134,\n        74\n      ],\n      [\n        \"Fri\",\n        1090,\n        290,\n        190\n      ],\n      [\n        \"Sat\",\n        1130,\n        230,\n        130\n      ],\n      [\n        \"Sun\",\n        1120,\n        220,\n        110\n      ]\n    ]\n  },\n  \"tooltip\": {\n    \"trigger\": \"axis\",\n    \"axisPointer\": {\n      \"type\": \"shadow\"\n    }\n  },\n  \"title\": {\n    \"text\": \"Search Engine Usage\",\n    \"left\": \"center\",\n    \"textStyle\": {\n      \"width\": 200,\n      \"overflow\": \"truncate\"\n    }\n  },\n  \"legend\": {\n    \"top\": 40,\n    \"type\": \"scroll\"\n  },\n  \"grid\": {\n    \"left\": 15,\n    \"right\": 15,\n    \"bottom\": 30,\n    \"top\": 100,\n    \"containLabel\": true\n  },\n  \"xAxis\": [\n    {\n      \"type\": \"category\"\n    }\n  ],\n  \"yAxis\": [\n    {\n      \"type\": \"value\"\n    }\n  ],\n  \"series\": [\n    {\n      \"type\": \"bar\",\n      \"stack\": \"Search Engine\"\n    },\n    {\n      \"type\": \"bar\",\n      \"stack\": \"Search Engine\"\n    },\n    {\n      \"type\": \"bar\",\n      \"stack\": \"Search Engine\"\n    }\n  ]\n}\n}}",
   "customFusionChartConfig": {
     "dataSource": {
@@ -73,7 +72,7 @@
       "key": "fontFamily"
     },
     {
-      "key": "chartData.7mhc5r2zb1.data"
+      "key": "chartData.96fqstwbg2.data"
     }
   ],
   "dynamicTriggerPathList": [],
@@ -81,29 +80,29 @@
   "fontFamily": "{{appsmith.theme.fontFamily.appFont}}",
   "isLoading": false,
   "isVisible": true,
-  "key": "t0mavlyv8x",
+  "key": "4cxlcfbs3i",
   "labelOrientation": "auto",
-  "leftColumn": 0,
+  "leftColumn": 25,
   "minWidth": 450,
-  "mobileBottomRow": 48,
-  "mobileLeftColumn": 0,
-  "mobileRightColumn": 23,
-  "mobileTopRow": 16,
+  "mobileBottomRow": 84,
+  "mobileLeftColumn": 22,
+  "mobileRightColumn": 46,
+  "mobileTopRow": 52,
   "needsErrorInfo": true,
-  "originalBottomRow": 162,
-  "originalTopRow": 113,
-  "parentColumnSpace": 7.345703125,
-  "parentId": "tp0m049tgh",
+  "originalBottomRow": 59,
+  "originalTopRow": 27,
+  "parentColumnSpace": 13.59375,
+  "parentId": "yxaq42t7oj",
   "parentRowSpace": 10,
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
-  "rightColumn": 64,
-  "showDataPointLabel": true,
-  "topRow": 113,
+  "rightColumn": 63,
+  "showDataPointLabel": false,
+  "topRow": 2,
   "type": "CHART_WIDGET",
   "version": 1,
-  "widgetId": "8muw0ditwr",
-  "widgetName": "Grafico_Productos",
-  "xAxisName": "",
-  "yAxisName": ""
+  "widgetId": "rx9rxwzs5u",
+  "widgetName": "Chart1",
+  "xAxisName": "Product Line",
+  "yAxisName": "Revenue($)"
 }

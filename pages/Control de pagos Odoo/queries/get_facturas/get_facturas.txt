@@ -1,0 +1,12 @@
+SELECT * FROM public.facturas_unificadas
+WHERE
+  (origen = {{Select1.selectedOptionValue}} OR {{Select1.selectedOptionValue == ""}})
+  AND
+  (estado_pago = {{Select2.selectedOptionValue}} OR {{Select2.selectedOptionValue == ""}})
+  AND
+  (cliente ILIKE {{'%' + Input1.text + '%'}} OR {{Input1.text == ""}})
+  AND
+  (COALESCE(fecha_factura, fecha_vencimiento) >= CAST({{DatePicker1.selectedDate || '2000-01-01'}} AS date) OR COALESCE(fecha_factura, fecha_vencimiento) IS NULL)
+  AND
+  (COALESCE(fecha_factura, fecha_vencimiento) <= CAST({{DatePicker2.selectedDate || '2100-01-01'}} AS date) OR COALESCE(fecha_factura, fecha_vencimiento) IS NULL)
+ORDER BY COALESCE(fecha_factura, fecha_vencimiento) DESC NULLS LAST;

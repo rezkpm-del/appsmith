@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 25,
+  "bottomRow": 8,
   "dynamicBindingPathList": [
     {
       "key": "truncateButtonColor"
@@ -11,40 +11,43 @@
     },
     {
       "key": "borderRadius"
+    },
+    {
+      "key": "text"
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
   "dynamicTriggerPathList": [],
   "fontFamily": "{{appsmith.theme.fontFamily.appFont}}",
-  "fontSize": "0.875rem",
+  "fontSize": "1.25rem",
   "fontStyle": "BOLD",
   "isLoading": false,
   "isVisible": true,
-  "key": "u9rlw771cb",
-  "leftColumn": 7,
+  "key": "voafnd7hxv",
+  "leftColumn": 8,
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 4,
   "minWidth": 450,
-  "mobileBottomRow": 4,
+  "mobileBottomRow": 8,
   "mobileLeftColumn": 1,
   "mobileRightColumn": 37,
-  "mobileTopRow": 0,
+  "mobileTopRow": 4,
   "needsErrorInfo": false,
-  "originalBottomRow": 4,
-  "originalTopRow": 0,
+  "originalBottomRow": 11,
+  "originalTopRow": 5,
   "overflow": "NONE",
-  "parentId": "tmwhbhhj8g",
+  "parentId": "s5xueeamhl",
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
-  "rightColumn": 56,
+  "rightColumn": 51,
   "shouldTruncate": false,
-  "text": "Unidades Reales",
+  "text": "{{\n  get_facturas.data\n    .filter(factura => factura.estado_pago === 'not_paid')\n    .reduce((suma, factura) => suma + (Number(factura.total) || 0), 0)\n    .toLocaleString('es-AR', { style: 'currency', currency: 'ARS' })\n}}",
   "textAlign": "LEFT",
-  "textColor": "#999999",
-  "topRow": 0,
+  "textColor": "#231F20",
+  "topRow": 4,
   "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
   "type": "TEXT_WIDGET",
   "version": 1,
-  "widgetId": "0a4umttqf6",
-  "widgetName": "Text17CopyCopy"
+  "widgetId": "12yuhmahzt",
+  "widgetName": "Text2"
 }

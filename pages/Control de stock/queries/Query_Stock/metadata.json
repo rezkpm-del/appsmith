@@ -29,7 +29,7 @@
     ],
     "name": "Query_Stock",
     "pageId": "Control de stock",
-    "runBehaviour": "AUTOMATIC",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }

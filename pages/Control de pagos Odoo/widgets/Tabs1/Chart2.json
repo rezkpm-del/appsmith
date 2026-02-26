@@ -3,16 +3,16 @@
   "allowScroll": false,
   "animateLoading": true,
   "borderRadius": "1.5rem",
-  "bottomRow": 162,
-  "boxShadow": "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
+  "bottomRow": 71,
+  "boxShadow": "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)",
   "chartData": {
-    "7mhc5r2zb1": {
-      "color": "#DD4B34",
-      "data": "{{ \n  SelectQuery.data.map( item => ({ \n    x: item.producto, \n    y: item.cantidad_insumos\n    \n  })) \n}}",
+    "96fqstwbg2": {
+      "color": "#F97316",
+      "data": "{{\n  Object.entries(\n    get_facturas.data\n      .filter(f => f.estado_pago === 'not_paid' && f.cliente && f.cliente !== 'Sin Cliente')\n      .reduce((acumulador, factura) => {\n        let nombre = factura.cliente;\n        acumulador[nombre] = (acumulador[nombre] || 0) + (Number(factura.total) || 0);\n        return acumulador;\n      }, {})\n  )\n  .map(([cliente, total]) => ({ \n    x: cliente.substring(0, 15) + (cliente.length > 15 ? '...' : ''),\n    y: total \n  }))\n  .sort((a, b) => b.y - a.y)\n  .slice(0, 5)\n}}",
       "seriesName": ""
     }
   },
-  "chartName": "Venta - Productos",
+  "chartName": "Top 5 Clientes Deudores",
   "chartType": "BAR_CHART",
   "customEChartConfig": "{{\n{\n  \"dataset\": {\n    \"source\": [\n      [\n        \"Day\",\n        \"Baidu\",\n        \"Google\",\n        \"Bing\"\n      ],\n      [\n        \"Mon\",\n        620,\n        120,\n        60\n      ],\n      [\n        \"Tue\",\n        732,\n        132,\n        72\n      ],\n      [\n        \"Wed\",\n        701,\n        101,\n        71\n      ],\n      [\n        \"Thu\",\n        734,\n        134,\n        74\n      ],\n      [\n        \"Fri\",\n        1090,\n        290,\n        190\n      ],\n      [\n        \"Sat\",\n        1130,\n        230,\n        130\n      ],\n      [\n        \"Sun\",\n        1120,\n        220,\n        110\n      ]\n    ]\n  },\n  \"tooltip\": {\n    \"trigger\": \"axis\",\n    \"axisPointer\": {\n      \"type\": \"shadow\"\n    }\n  },\n  \"title\": {\n    \"text\": \"Search Engine Usage\",\n    \"left\": \"center\",\n    \"textStyle\": {\n      \"width\": 200,\n      \"overflow\": \"truncate\"\n    }\n  },\n  \"legend\": {\n    \"top\": 40,\n    \"type\": \"scroll\"\n  },\n  \"grid\": {\n    \"left\": 15,\n    \"right\": 15,\n    \"bottom\": 30,\n    \"top\": 100,\n    \"containLabel\": true\n  },\n  \"xAxis\": [\n    {\n      \"type\": \"category\"\n    }\n  ],\n  \"yAxis\": [\n    {\n      \"type\": \"value\"\n    }\n  ],\n  \"series\": [\n    {\n      \"type\": \"bar\",\n      \"stack\": \"Search Engine\"\n    },\n    {\n      \"type\": \"bar\",\n      \"stack\": \"Search Engine\"\n    },\n    {\n      \"type\": \"bar\",\n      \"stack\": \"Search Engine\"\n    }\n  ]\n}\n}}",
   "customFusionChartConfig": {
@@ -73,7 +73,7 @@
       "key": "fontFamily"
     },
     {
-      "key": "chartData.7mhc5r2zb1.data"
+      "key": "chartData.96fqstwbg2.data"
     }
   ],
   "dynamicTriggerPathList": [],
@@ -81,29 +81,27 @@
   "fontFamily": "{{appsmith.theme.fontFamily.appFont}}",
   "isLoading": false,
   "isVisible": true,
-  "key": "t0mavlyv8x",
+  "key": "4cxlcfbs3i",
   "labelOrientation": "auto",
-  "leftColumn": 0,
+  "leftColumn": 24,
   "minWidth": 450,
-  "mobileBottomRow": 48,
-  "mobileLeftColumn": 0,
-  "mobileRightColumn": 23,
-  "mobileTopRow": 16,
+  "mobileBottomRow": 71,
+  "mobileLeftColumn": 32,
+  "mobileRightColumn": 56,
+  "mobileTopRow": 39,
   "needsErrorInfo": true,
-  "originalBottomRow": 162,
-  "originalTopRow": 113,
-  "parentColumnSpace": 7.345703125,
-  "parentId": "tp0m049tgh",
+  "parentColumnSpace": 13.59375,
+  "parentId": "yxaq42t7oj",
   "parentRowSpace": 10,
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
-  "rightColumn": 64,
-  "showDataPointLabel": true,
-  "topRow": 113,
+  "rightColumn": 63,
+  "showDataPointLabel": false,
+  "topRow": 36,
   "type": "CHART_WIDGET",
   "version": 1,
-  "widgetId": "8muw0ditwr",
-  "widgetName": "Grafico_Productos",
+  "widgetId": "zowl7sjhmn",
+  "widgetName": "Chart2",
   "xAxisName": "",
   "yAxisName": ""
 }
