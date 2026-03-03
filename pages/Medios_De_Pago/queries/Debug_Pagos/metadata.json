@@ -25,7 +25,7 @@
     "dynamicBindingPathList": [],
     "name": "Debug_Pagos",
     "pageId": "Medios_De_Pago",
-    "runBehaviour": "MANUAL",
-    "userSetOnLoad": false
+    "runBehaviour": "AUTOMATIC",
+    "userSetOnLoad": true
   }
 }

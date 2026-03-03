@@ -1,0 +1,4 @@
+SELECT Estado, COUNT(*) as Cantidad_Tickets
+FROM ventas
+WHERE FechaContable >= '2026-01-01'
+GROUP BY Estado;

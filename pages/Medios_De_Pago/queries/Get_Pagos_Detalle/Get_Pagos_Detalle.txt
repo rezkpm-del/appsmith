@@ -8,7 +8,7 @@ SELECT
 FROM ventas_cobranzas vc
 INNER JOIN ventas v ON 
     vc.IdVenta = v.IdVenta 
-    AND vc.IdSucursal = v.IdSucursal
+   
 
 WHERE 
     v.FechaContable >= '{{ DatePicker1.formattedDate }}'

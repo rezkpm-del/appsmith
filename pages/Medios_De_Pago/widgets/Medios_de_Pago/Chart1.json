@@ -8,7 +8,7 @@
   "chartData": {
     "hdjbkn0as5": {
       "data": "{{ \n  (Get_Ventas_Total.data || []).map( item => {\n    return {\n      x: item.Medio_Pago,        // Antes era item.medio_pago\n      y: item.Total_Venta_Real   // Antes era item.total_cobrado\n    };\n  })\n}}",
-      "seriesName": "2023"
+      "seriesName": ""
     }
   },
   "chartName": "",

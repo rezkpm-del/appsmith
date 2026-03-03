@@ -29,7 +29,7 @@
     ],
     "name": "Query1",
     "pageId": "Medios_De_Pago",
-    "runBehaviour": "MANUAL",
-    "userSetOnLoad": false
+    "runBehaviour": "AUTOMATIC",
+    "userSetOnLoad": true
   }
 }
