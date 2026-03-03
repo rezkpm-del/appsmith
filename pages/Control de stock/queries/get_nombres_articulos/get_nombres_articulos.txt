@@ -1,1 +1,1 @@
-SELECT IdArticulo, Descripcion FROM articulos;
+SELECT IdArticulo as value, Descripcion as label FROM articulos;

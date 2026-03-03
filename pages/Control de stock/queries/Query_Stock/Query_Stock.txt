@@ -1,3 +1,4 @@
 SELECT IdArticulo, Cantidad as stock_inicial 
 FROM stock_resumenes 
-WHERE IdSucursal = {{sel_sucursal.selectedOptionValue}};
+WHERE IdSucursal = {{sel_sucursal.selectedOptionValue}}
+AND ({{sel_insumo.selectedOptionValue || -1}} = -1 OR IdArticulo = {{sel_insumo.selectedOptionValue || -1}})

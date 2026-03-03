@@ -35,9 +35,10 @@
     "Insumo",
     "Stock_Inicial1",
     "Vendido",
-    "Stock_Actual1"
+    "Stock_Actual1",
+    "IdArticulo"
   ],
-  "columnUpdatedAt": 1769872368969,
+  "columnUpdatedAt": 1772550779598,
   "columnWidthMap": {},
   "customIsLoading": false,
   "customIsLoadingValue": "",
@@ -71,11 +72,26 @@
     },
     {
       "key": "primaryColumns.Insumo.computedValue"
+    },
+    {
+      "key": "primaryColumns.IdArticulo.computedValue"
+    },
+    {
+      "key": "primaryColumns.Stock_Actual1.cellBackground"
+    },
+    {
+      "key": "primaryColumns.Stock_Actual1.textColor"
     }
   ],
   "dynamicPropertyPathList": [
     {
       "key": "tableData"
+    },
+    {
+      "key": "primaryColumns.Stock_Actual1.cellBackground"
+    },
+    {
+      "key": "primaryColumns.Stock_Actual1.textColor"
     }
   ],
   "dynamicTriggerPathList": [],
@@ -104,6 +120,40 @@
   "parentId": "fib1ryr076",
   "parentRowSpace": 10,
   "primaryColumns": {
+    "IdArticulo": {
+      "alias": "IdArticulo",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "cellBackground": "",
+      "columnType": "number",
+      "computedValue": "{{(() => { const tableData = Table1.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"IdArticulo\"])) : IdArticulo })()}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "fontStyle": "",
+      "horizontalAlignment": "LEFT",
+      "id": "IdArticulo",
+      "index": 0,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": true,
+      "label": "IdArticulo",
+      "notation": "standard",
+      "originalId": "IdArticulo",
+      "sticky": "",
+      "textColor": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
     "Insumo": {
       "alias": "Insumo",
       "allowCellWrapping": false,
@@ -139,6 +189,7 @@
       "alias": "Stock_Actual",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
+      "cellBackground": "{{(() => { const tableData = Table1.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow.Stock_Actual < 0 ? '#fee2e2' : '#dcfce3')) : currentRow.Stock_Actual < 0 ? '#fee2e2' : '#dcfce3' })()}}",
       "columnType": "number",
       "computedValue": "{{(() => { const tableData = Table1.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"Stock_Actual\"])) : Stock_Actual })()}}",
       "currencyCode": "USD",
@@ -160,6 +211,7 @@
       "notation": "standard",
       "originalId": "Stock_Actual",
       "sticky": "",
+      "textColor": "{{(() => { const tableData = Table1.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow.Stock_Actual < 0 ? '#991b1b' : '#166534')) : currentRow.Stock_Actual < 0 ? '#991b1b' : '#166534' })()}}",
       "textSize": "0.875rem",
       "thousandSeparator": true,
       "validation": {},

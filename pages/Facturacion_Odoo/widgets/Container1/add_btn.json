@@ -1,6 +1,6 @@
 {
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 302,
+  "bottomRow": 282,
   "boxShadow": "none",
   "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
   "buttonVariant": "PRIMARY",
@@ -30,7 +30,7 @@
   "parentId": "59rw5mx0bq",
   "parentRowSpace": 10,
   "rightColumn": 62,
-  "topRow": 298,
+  "topRow": 278,
   "type": "ICON_BUTTON_WIDGET",
   "version": 1,
   "widgetId": "nh3cu4lb1g",

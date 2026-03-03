@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT \n    vi.IdArticulo, \n    SUM(vi.Cantidad) as cant_vendida \nFROM ventas_items vi\n-- Unimos con la tabla de ventas para obtener la fecha\nINNER JOIN ventas v ON vi.IdVenta = v.IdVenta\nWHERE v.IdSucursal = {{sel_sucursal.selectedOptionValue}}\n-- Ahora sí usamos la fecha de la tabla 'ventas'\nAND v.FechaContable >= {{fecha_inicio.formattedDate}} \nAND v.FechaContable <= {{fecha_fin.formattedDate}}\nGROUP BY vi.IdArticulo;",
+      "body": "SELECT \n    IdArticulo,\n    SUM(CantidadVendida) as cant_vendida\nFROM stock_resumenes\nWHERE IdSucursal = {{sel_sucursal.selectedOptionValue}}\n-- Usamos la fecha contable directamente de esta tabla\nAND FechaContable >= {{moment(fecha_inicio.selectedDate).format('YYYY-MM-DD')}}\nAND FechaContable <= {{moment(fecha_fin.selectedDate).format('YYYY-MM-DD')}}\n-- Mantenemos el filtro de insumo que ya logramos hacer andar\nAND ({{sel_insumo.selectedOptionValue || -1}} = -1 OR IdArticulo = {{sel_insumo.selectedOptionValue || -1}})\nGROUP BY IdArticulo;",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
@@ -29,7 +29,7 @@
     ],
     "name": "Query2",
     "pageId": "Control de stock",
-    "runBehaviour": "ON_PAGE_LOAD",
+    "runBehaviour": "AUTOMATIC",
     "userSetOnLoad": true
   }
 }

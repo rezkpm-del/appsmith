@@ -5,12 +5,12 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT IdArticulo, Cantidad as stock_inicial \nFROM stock_resumenes \nWHERE IdSucursal = {{sel_sucursal.selectedOptionValue}};",
+      "body": "SELECT IdArticulo, Cantidad as stock_inicial \nFROM stock_resumenes \nWHERE IdSucursal = {{sel_sucursal.selectedOptionValue}}\nAND ({{sel_insumo.selectedOptionValue || -1}} = -1 OR IdArticulo = {{sel_insumo.selectedOptionValue || -1}})",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
         {
-          "value": true
+          "value": false
         }
       ],
       "timeoutInMillisecond": 10000
@@ -29,7 +29,7 @@
     ],
     "name": "Query_Stock",
     "pageId": "Control de stock",
-    "runBehaviour": "MANUAL",
-    "userSetOnLoad": false
+    "runBehaviour": "AUTOMATIC",
+    "userSetOnLoad": true
   }
 }

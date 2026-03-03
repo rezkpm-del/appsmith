@@ -25,7 +25,7 @@
     "dynamicBindingPathList": [],
     "name": "Query1",
     "pageId": "Control de stock",
-    "runBehaviour": "ON_PAGE_LOAD",
+    "runBehaviour": "AUTOMATIC",
     "userSetOnLoad": true
   }
 }
