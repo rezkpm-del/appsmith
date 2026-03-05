@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT IdArticulo as value, Descripcion as label FROM articulos;",
+      "body": "SELECT \n    IdArticulo as value, \n    Descripcion as label \nFROM articulos\nWHERE IdSubFamilia IN (1, 2, 3, 4, 5) \nORDER BY Descripcion ASC;",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

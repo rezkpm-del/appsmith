@@ -1,19 +1,16 @@
 {
   "accentColor": "{{appsmith.theme.colors.primaryColor}}",
   "animateLoading": true,
-  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "borderRadius": "1.5rem",
   "bottomRow": 29,
-  "boxShadow": "none",
+  "boxShadow": "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)",
   "closeOnSelection": true,
-  "dateFormat": "YYYY-MM-DD",
+  "dateFormat": "DD-MM-YYYY",
   "datePickerType": "DATE_PICKER",
   "defaultDate": "{{moment().subtract(7, 'days').format('YYYY-MM-DD')}}",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
-    },
-    {
-      "key": "borderRadius"
     },
     {
       "key": "defaultDate"

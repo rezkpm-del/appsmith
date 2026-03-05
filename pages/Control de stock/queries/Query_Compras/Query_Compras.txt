@@ -1,0 +1,11 @@
+SELECT 
+    ci.IdObjeto as IdArticulo,
+    SUM(ci.CantidadComprada) as cant_comprada,
+    SUM(ci.MontoSinIVA) as costo_total
+FROM compras_items ci
+INNER JOIN compras c ON ci.IdCompra = c.IdCompra
+WHERE c.IdSucursal = {{sel_sucursal.selectedOptionValue || -1}}
+AND c.FechaContable >= {{moment(fecha_inicio.selectedDate).format('YYYY-MM-DD')}}
+AND c.FechaContable <= {{moment(fecha_fin.selectedDate).format('YYYY-MM-DD')}}
+AND ({{sel_insumo.selectedOptionValue || -1}} = -1 OR ci.IdObjeto = {{sel_insumo.selectedOptionValue || -1}})
+GROUP BY ci.IdObjeto;

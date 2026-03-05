@@ -1,19 +1,16 @@
 {
   "accentColor": "{{appsmith.theme.colors.primaryColor}}",
   "animateLoading": true,
-  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "borderRadius": "1.5rem",
   "bottomRow": 29,
-  "boxShadow": "none",
+  "boxShadow": "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)",
   "closeOnSelection": true,
-  "dateFormat": "YYYY-MM-DD",
+  "dateFormat": "DD-MM-YYYY",
   "datePickerType": "DATE_PICKER",
   "defaultDate": "{{moment().format('YYYY-MM-DD')}}",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
-    },
-    {
-      "key": "borderRadius"
     },
     {
       "key": "defaultDate"
@@ -53,8 +50,8 @@
   "mobileTopRow": 36,
   "needsErrorInfo": false,
   "onDateSelected": "{{Query2.run().then(() => {\n  JSObject3.obtenerReporteInsumos();\n});}}",
-  "originalBottomRow": 29,
-  "originalTopRow": 22,
+  "originalBottomRow": 31,
+  "originalTopRow": 24,
   "parentColumnSpace": 10.640625,
   "parentId": "w3s486up4p",
   "parentRowSpace": 10,
