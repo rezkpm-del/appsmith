@@ -6,7 +6,9 @@ WHERE
   AND
   (cliente ILIKE {{'%' + Input1.text + '%'}} OR {{Input1.text == ""}})
   AND
-  (numero_factura LIKE '%-%') 
+  (numero_factura LIKE '%-%')
+  AND
+  (estado_pago != 'reversed' OR estado_pago IS NULL)
   AND
   (COALESCE(fecha_factura, fecha_vencimiento) >= CAST({{DatePicker1.selectedDate || '2000-01-01'}} AS date) OR COALESCE(fecha_factura, fecha_vencimiento) IS NULL)
   AND
