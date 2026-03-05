@@ -1,11 +1,11 @@
 {
-  "gitSyncId": "694ebec5a56d53482b864ab0_ca0b8ae4-ac26-4aee-bf43-1135378ec01a",
-  "id": "Control de stock_get_nombres_articulos",
+  "gitSyncId": "694ebec5a56d53482b864ab0_83a79d62-5e85-4425-a003-386c77e50e73",
+  "id": "Control de stock_Query3",
   "pluginId": "mysql-plugin",
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT \n    IdArticulo as value, \n    Descripcion as label \nFROM articulos\nWHERE IdSubFamilia IN (4, 7, 8, 9, 33) \nORDER BY Descripcion ASC;",
+      "body": "SELECT * FROM agrupamientos LIMIT 10;",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
@@ -22,10 +22,9 @@
       "name": "Conexion_Central",
       "pluginId": "mysql-plugin"
     },
-    "dynamicBindingPathList": [],
-    "name": "get_nombres_articulos",
+    "name": "Query3",
     "pageId": "Control de stock",
-    "runBehaviour": "AUTOMATIC",
-    "userSetOnLoad": true
+    "runBehaviour": "MANUAL",
+    "userSetOnLoad": false
   }
 }

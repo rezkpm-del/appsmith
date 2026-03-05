@@ -2,5 +2,5 @@ SELECT
     IdArticulo as value, 
     Descripcion as label 
 FROM articulos
-WHERE IdSubFamilia IN (1, 2, 3, 4, 5) 
+WHERE IdSubFamilia IN (4, 7, 8, 9, 33) 
 ORDER BY Descripcion ASC;
