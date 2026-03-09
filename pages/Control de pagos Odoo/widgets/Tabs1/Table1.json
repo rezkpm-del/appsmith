@@ -42,7 +42,7 @@
     "estado_pago",
     "estado_documento"
   ],
-  "columnUpdatedAt": 1772729673405,
+  "columnUpdatedAt": 1773079199188,
   "columnWidthMap": {},
   "customIsLoading": false,
   "customIsLoadingValue": "",
@@ -213,7 +213,7 @@
       "isDiscardVisible": true,
       "isEditable": false,
       "isSaveVisible": true,
-      "isVisible": false,
+      "isVisible": true,
       "label": "estado_pago",
       "notation": "standard",
       "originalId": "estado_pago",
