@@ -11,6 +11,9 @@
     },
     {
       "key": "borderRadius"
+    },
+    {
+      "key": "text"
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
@@ -21,7 +24,7 @@
   "isLoading": false,
   "isVisible": true,
   "key": "voafnd7hxv",
-  "leftColumn": 17,
+  "leftColumn": 9,
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 4,
   "minWidth": 450,
@@ -30,7 +33,7 @@
   "mobileRightColumn": 37,
   "mobileTopRow": 0,
   "needsErrorInfo": false,
-  "originalBottomRow": 4,
+  "originalBottomRow": 5,
   "originalTopRow": 0,
   "overflow": "NONE",
   "parentId": "tt3y825hvb",
@@ -38,7 +41,7 @@
   "responsiveBehavior": "fill",
   "rightColumn": 53,
   "shouldTruncate": false,
-  "text": "Total Cobrado",
+  "text": "{{\n  Select3.selectedOptionValue === 'compras' ? 'Total Pagado' :\n  Select3.selectedOptionValue === 'ventas' ? 'Total Cobrado' :\n  'Total (Pagado + Cobrado)'\n}}",
   "textAlign": "LEFT",
   "textColor": "#999999",
   "topRow": 0,

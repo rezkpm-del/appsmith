@@ -11,6 +11,9 @@
     },
     {
       "key": "borderRadius"
+    },
+    {
+      "key": "text"
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
@@ -38,7 +41,7 @@
   "responsiveBehavior": "fill",
   "rightColumn": 49,
   "shouldTruncate": false,
-  "text": "Deuda Total (Sin Pagar)",
+  "text": "{{\n  Select3.selectedOptionValue === 'compras' ? 'Deuda a Proveedores' :\n  Select3.selectedOptionValue === 'ventas' ? 'Deuda de Clientes' :\n  'Deuda Total (Global)'\n}}",
   "textAlign": "LEFT",
   "textColor": "#999999",
   "topRow": 0,
