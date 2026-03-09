@@ -6,9 +6,15 @@ WHERE
   AND
   (cliente ILIKE {{'%' + Input1.text + '%'}} OR {{Input1.text == ""}})
   AND
-  (numero_factura LIKE '%-%')
-  AND
   (estado_pago != 'reversed' OR estado_pago IS NULL)
+  AND
+  (
+    ({{Select3.selectedOptionValue}} = 'ventas' AND cliente IN ('BELGRANO - [LA PERLA 58 S.R.L.]', 'CABALLITO - [SILROB S.A.]', 'CAÑITAS - [KYTARU S.A.S]', 'COLEGIALES - [IN COLE S.A.]', 'EUSKAL - [Perla Delta]', 'LOMAS DE ZAMORA - [LOMAGROUP SRL]', 'MARTINEZ - [Los Arieles Tigre Norte SRL]', 'MARTINEZ - [Los Arieles Tigre Norte SRL], CRISTIAN', 'MASCHWITZ - [Jackson Steak House SRL.]', 'MASCHWITZ - [Jackson Steak House SRL.], GONZALO', 'NORDELTA - [JACKARRITA S.R.L.]', 'NUÑEZ - [21 DE SEPTIEMBRE]', 'OLIVOS - [NAZZUOUL S.R.L]', 'PALERMO - [LA CALLE BAR S.R.L.]', 'PILAR - [TERRAZAS 13 S.R.L.]', 'Pizzeria Victorica', 'TIGRE - [Los Arieles Tigre Norte SRL]', 'URQUIZA - [EN DOHO S.A.]', 'VENTA INTERNA EMPLEADOS', 'VILLA CRESPO - [LA CALLE BAR S.R.L.]', 'VILLA DEL PARQUE - [Nea Kithara S.R.L]'))
+    OR
+    ({{Select3.selectedOptionValue}} = 'compras' AND (cliente NOT IN ('BELGRANO - [LA PERLA 58 S.R.L.]', 'CABALLITO - [SILROB S.A.]', 'CAÑITAS - [KYTARU S.A.S]', 'COLEGIALES - [IN COLE S.A.]', 'EUSKAL - [Perla Delta]', 'LOMAS DE ZAMORA - [LOMAGROUP SRL]', 'MARTINEZ - [Los Arieles Tigre Norte SRL]', 'MARTINEZ - [Los Arieles Tigre Norte SRL], CRISTIAN', 'MASCHWITZ - [Jackson Steak House SRL.]', 'MASCHWITZ - [Jackson Steak House SRL.], GONZALO', 'NORDELTA - [JACKARRITA S.R.L.]', 'NUÑEZ - [21 DE SEPTIEMBRE]', 'OLIVOS - [NAZZUOUL S.R.L]', 'PALERMO - [LA CALLE BAR S.R.L.]', 'PILAR - [TERRAZAS 13 S.R.L.]', 'Pizzeria Victorica', 'TIGRE - [Los Arieles Tigre Norte SRL]', 'URQUIZA - [EN DOHO S.A.]', 'VENTA INTERNA EMPLEADOS', 'VILLA CRESPO - [LA CALLE BAR S.R.L.]', 'VILLA DEL PARQUE - [Nea Kithara S.R.L]') OR cliente IS NULL))
+    OR
+    ({{Select3.selectedOptionValue}} = 'todos' OR {{Select3.selectedOptionValue == ""}})
+  )
   AND
   (COALESCE(fecha_factura, fecha_vencimiento) >= CAST({{DatePicker1.selectedDate || '2000-01-01'}} AS date) OR COALESCE(fecha_factura, fecha_vencimiento) IS NULL)
   AND

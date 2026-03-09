@@ -25,7 +25,7 @@
     "fullyQualifiedName": "JSObject3.obtenerReporteInsumos",
     "name": "obtenerReporteInsumos",
     "pageId": "Control de stock",
-    "runBehaviour": "MANUAL",
-    "userSetOnLoad": false
+    "runBehaviour": "AUTOMATIC",
+    "userSetOnLoad": true
   }
 }
