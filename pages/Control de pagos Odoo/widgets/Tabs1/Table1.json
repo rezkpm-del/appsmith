@@ -43,7 +43,10 @@
     "estado_documento"
   ],
   "columnUpdatedAt": 1773079199188,
-  "columnWidthMap": {},
+  "columnWidthMap": {
+    "cliente": 408,
+    "origen": 202
+  },
   "customIsLoading": false,
   "customIsLoadingValue": "",
   "defaultPageSize": 0,
